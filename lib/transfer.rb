@@ -1,7 +1,7 @@
 require 'pry'
 class Transfer
  attr_accessor :sender, :receiver, :status, :amount
- # your code here
+
  def initialize(sender,receiver,amount)
    @sender = sender
    @receiver = receiver
@@ -14,10 +14,9 @@ class Transfer
   else
     false
   end
-  # @sender.valid? && @receiver.valid? ? true : false
  end
    def execute_transaction
-#binding.pry
+
    if @sender.status == "open" && @receiver.status == "open" && @sender.balance > @amount && @status == "pending"
      @sender.balance -= @amount
      @receiver.balance += @amount
